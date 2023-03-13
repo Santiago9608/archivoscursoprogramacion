@@ -7,47 +7,52 @@ Original file is located at
     https://colab.research.google.com/drive/1V_k4L4LAtPz1lIp-aKu-RT1TzckUd2IL
 """
 
-numero_id = int(input("Digite su número de identificación"))
+numero_id = int(input("Digite su número de identificación: "))
 print(numero_id)
-nombres = input("Digite sus nombres")
+nombres = input("Digite sus nombres: ")
 print(nombres)
-apellidos = input("Digite sus apellidos")
+apellidos = input("Digite sus apellidos: ")
 print(apellidos)
-direccion = input("Digite su direccion")
+direccion = input("Digite su direccion: ")
 print(direccion)
-telefono = int(input("Digite su telefono"))
+telefono = int(input("Digite su telefono: "))
 print(telefono)
-edad = int(input("Digite su edad"))
+edad = int(input("Digite su edad: "))
 print(edad)
-estado_ci = input("Digite su estado civil")
+estado_ci = input("Digite su estado civil: ")
 print(estado_ci)
-hijos = int(input("¿Cuántos hijos tiene"))
+hijos = int(input("¿Cuántos hijos tiene: "))
 print(hijos)
-estatura = int(input("Digite su estatura en cm"))
+estatura = int(input("Digite su estatura en cm: "))
 print(estatura)
-fecha = input("Digite su fecha de contratación dd/mm/aaaa")
+fecha = input("Digite su fecha de contratación dd/mm/aaaa: ")
 print(fecha)
-sueldo = float(input("¿Cual es su salario?"))
+sueldo = float(input("¿Cual es su salario?: "))
 print(sueldo)
 dias = int(input("Digite los dias laborados: "))
 print(dias)
 
+# Sí el trabajador tiene más de 55 años tiene aumento del 5% con base a su salario.
 if edad > 55 :
   nsueldo = sueldo + (sueldo * 0.05)
-  print("El sueldo con aumento es ${:,.0f}" .format(nsueldo))
-else: 
-  if estado_ci == "casado" & hijos > 0 :
-    print("Se le otorga un paseo cada Diciembre")
-  else: 
-     if 1000000 < sueldo < 1500000 :
-      nsueldo = sueldo + (sueldo*0.02)
-      print(nsueldo)
-     else :
-      if 1501000 <= sueldo <= 2000000 :
-        nsueldo = sueldo + (sueldo * 0.05)
-        print(nsueldo)
-      else:
-        if dias > 20 & suelddo < 1000000 :
-          print("Bono de alimentación")
-        else :
-          print("No tiene beneficio")
+  print("El salario con aumento por ser mayor de 55 años es ${:,.0f}" .format(nsueldo))
+else :
+  print("No obtiene aumento de salario por edad")
+
+# Sí el trabajdor es casado y tiene hijos tiene beneficio de viaje cada Diciembre.
+if estado_ci == "casado" and hijos > 0 :
+  print("Se le otorga un paseo cada Diciembre")
+
+# Sí el salario del trabajdor se ubica en los rangos establecidos, se le hace un aumento del 2% o el 5% con base a su salario según el caso.
+if 1000000 <= sueldo <= 1500000 :
+  nsueldo = nsueldo + (sueldo*0.02)
+  print("El salario final con aumentos es = ${:,.0f}" .format(nsueldo))
+elif 1501000 <= sueldo <= 2000000 :
+  nsueldo = nsueldo + (sueldo * 0.05)
+  print("El salario final con aumentos es = ${:,.0f}" .format(nsueldo))
+
+# Sí el trabajador ha trabajdo más de 20 dias y el salario es menor a 1000000 se otorga bono de alimentación.
+if dias > 20 and sueldo < 1000000 :
+  print("Bono de alimentación")
+else :
+  print("No tiene bono de alimentación")
