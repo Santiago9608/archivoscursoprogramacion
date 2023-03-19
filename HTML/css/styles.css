@@ -1,0 +1,11 @@
+
+    html{background-color: powderblue;}
+    h1 {
+       background-color: blue;
+       color:white;
+       font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+       text-align: center;
+    }
+    a:hover{
+        color: greenyellow;
+    }
